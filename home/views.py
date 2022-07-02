@@ -2,6 +2,7 @@ from http.client import ImproperConnectionState
 from django.shortcuts import render ,redirect
 from.forms import Contactusform
 from .models import Contactus
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -19,6 +20,7 @@ def contactus(request):
             rk = ct.cleaned_data["remark"]
             ct = Contactus(name=nm,email=em,mobile=mo,remark=rk)
             ct.save()
+            messages.success(request, 'Congratulations!! Will contact you soon.')
             return redirect("contactus")
             
     else:

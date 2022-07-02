@@ -9,6 +9,11 @@
       </p>
       <div class="col-sm-9 mb-5">
         <form action="" method="POST">
+          {% if messages %}
+          {% for message in messages %}
+           <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}}</p>
+          {% endfor %}
+          {% endif %}
           {% csrf_token %}
           {{form.as_p}}
           <button class="btn btn-primary" type="submit">Send</button>
