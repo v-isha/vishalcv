@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block maincontent %}
+<div class="container mt-5">
+    <h1 class="text-primary mb-5 border-bottom">CONTACT US</h1>
+    <div class="row text-dark mb-5">
+      <p class="mx-auto mb-5">
+        Do you have any questions? Please do not hesitate to contact. I will come back to you within a matter of hours to help you.
+      </p>
+      <div class="col-sm-9 mb-5">
+        <form action="" method="POST">
+          {% csrf_token %}
+          {{form.as_p}}
+          <button class="btn btn-primary" type="submit">Send</button>
+        </form>
+      </div>
+      <div class="col-sm-3 text-center">
+        <ul class="list-unstyled">
+          <li>
+            <i class="fas fa-map-marker-alt fa-2x i-color"></i>
+            <p>jeevan park, New delhi, India</p>
+          </li>
+          <li>
+            <i class="fas fa-phone mt-4 fa-2x i-color"></i>
+            <p>9990611334</p>
+          </li>
+          <li>
+            <i class="fas fa-envelope mt-4 fa-2x i-color"></i>
+            <p>vshlkmr81@gmail.com</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+{% endblock maincontent %}
+
